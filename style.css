@@ -1,0 +1,269 @@
+:root {
+  --primary: #b6895b;
+  --bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 2000px;
+  color: black; /* Mengubah warna teks menjadi hitam */
+  background-image: url(/src/img/bgcoffee.png);
+}
+
+.container {
+  display: grid;
+  margin: 10%;
+}
+
+.container_analysis {
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo img {
+  width: 100px;
+}
+
+.navbar .navbar-nav a {
+  color: var(--primary); /* Menggunakan variabel --primary */
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  background: #fbc48d;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #856565;
+}
+
+.navbar .navbar-nav a:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+.navbar .navbar-extra a {
+  color: #040404;
+  margin: 0 0.5rem;
+  padding: 0 10px;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #fbc48d;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+.kotak_analysis-1 {
+  background-color: #ffe2b0;
+  height: 740px;
+  width: 1243px;
+  margin: 0 auto; /* Menengahkan kotak */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kotak_analysis-2 {
+  background-color: #a06500;
+  height: 94%;
+  width: 96%; /* Lebar maksimum elemen */
+  position: absolute; /* Menjadikan posisi absolut */
+  top: 50%; /* Menggeser ke atas sebesar setengah tinggi elemen */
+  left: 50%; /* Menggeser ke kiri sebesar setengah lebar elemen */
+  transform: translate(-50%, -50%); /* Menggeser ke tengah */
+  border-radius: 50px;
+  display: flex;
+  align-items: center; /* Menyusun elemen ke tengah secara vertikal */
+  justify-content: center; /* Menyusun elemen ke tengah secara horizontal */
+}
+
+.transaction-product_category {
+}
+
+.product_category-box {
+  background-color: white;
+  height: 200px;
+  width: 700px;
+}
+
+.product_category-circle {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  margin: 0em auto;
+  display: flex;
+}
+
+.dropdown {
+  min-width: 14em;
+  position: relative;
+}
+
+.dropdown * {
+  box-sizing: border-box; /* Mengubah kurung kurawal menjadi titik dua */
+}
+
+.select {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #a06600 solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.select-clicked {
+  border: 2px #a06600 solid;
+  box-shadow: 0 0 0.8em #a06600;
+}
+
+.select:hover {
+  background: grey;
+}
+
+.pickme {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid black;
+  transition: 0.3s;
+}
+
+.pickme-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: white;
+  border: 1px #a06600 solid;
+  color: black;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #a06600;
+}
+
+.active {
+  background: #23242a;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+.total-transaction {
+  background-color: white;
+  height: 75px;
+  width: 220px;
+  border-radius: 10px;
+}
+
+.monthly-transaction {
+  background-color: white;
+  height: 200px;
+  width: 710px;
+  border-radius: 10px;
+}
+.daily-transaction {
+  background-color: white;
+  height: 200px;
+  width: 424px;
+  border-radius: 10px;
+}
+
+.time-transaction {
+  background-color: white;
+  height: 200px;
+  width: 1144px;
+  border-radius: 10px;
+}
