@@ -1,226 +1,136 @@
 :root {
-    --primary: #b6895b;
-    --bg: #fff;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-    min-height: 2000px;
-  }
-  
-  /*Navbar*/
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 7%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-  }
-  
-  .navbar .navbar-logo img {
-    width: 100px;
-  }
-  
-  .navbar .navbar-nav a {
-    color: #040404;
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 1rem;
-    padding: 0 15px;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    transition: color 0.5s;
-  }
-  
-  .navbar .navbar-nav a::after {
-    content: "";
-    background: #fbc48d;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    opacity: 0;
-  }
-  
-  .navbar .navbar-nav a:hover {
-    color: #856565;
-  }
-  
-  .navbar .navbar-nav a:hover::after {
-    top: 50%;
-    opacity: 1;
-  }
-  
-  .navbar .navbar-extra a {
-    color: #040404;
-    margin: 0 0.5rem;
-    padding: 0 10px;
-  }
-  
-  .navbar .navbar-extra a:hover {
-    color: #fbc48d;
-  }
-  
-  /* Store Section */
+  --primary: #b6895b;
+  --bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 2000px;
+  background-image: url('img/bgcoffee.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9); /* Add a slight background color for better visibility */
+}
+
+.navbar .navbar-logo img {
+  width: 100px;
+}
+
+.navbar .navbar-nav a {
+  color: #040404;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  background: #fbc48d;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #856565;
+}
+
+.navbar .navbar-nav a:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+.navbar .navbar-extra a {
+  color: #040404;
+  margin: 0 0.5rem;
+  padding: 0 10px;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #fbc48d;
+}
+
+/* Store Section */
 .store {
-  font-family: 'Jacques Francois Shadow';
+  font-family: 'Jacques Francois Shadow', serif;
   font-size: 70px;
   color: #040404;
   margin-top: 100px;
-  padding: 0;
   text-align: center;
   -webkit-text-stroke: 2px #000; 
   color: transparent;
   border-bottom: 1px solid #000;
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-.container1 {
+.container1, .container2 {
   display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  padding-left: 7rem;
+  column-gap: 2rem;
+  padding: 2rem 7rem;
 }
 
-.store-img1 {
+.store-img1, .store-img2, .store-img3 {
   width: 250px;
-  padding-top: 3rem;
   max-width: 100%;
 }
 
-.teksA {
-  float: left;
+.teksA, .teksC {
   color: #040404;
   display: grid;
-  margin-right: 20px;
+  margin-left: -15%;
   padding-top: 1rem;
-  grid-template-columns: repeat(4, 250px);
-  grid-column-gap: 1rem;
-  text-align: justify;
   font-size: 1rem;
-}
-
-table {
-  width: 100%;
-  border: collapse;
-}
-
-td {
-  vertical-align: top; 
-  padding: 0 10px; 
-}
-
-
-.button1 {
-    float: left;
-    color: #000000;
-    background-color: #FFEC9E;
-    padding: 2px 100px;
-    border-radius: 50px;
-    font-weight: bolder;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-top: 10px;
-    text-align: center;
-    min-width: 150px;
-    min-height: 40px;
-}
-
-.button1:hover{
-    background-color: #ED9455;
-}
-
-.container2 {
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto 1fr;
-  column-gap: 2rem;
-  padding-right: 7rem;
-  padding-left: 7rem;
-}
-
-.store-img2 {
-  width: 250px;
-  padding-top: 3rem;
 }
 
 .teksB {
-  float: right;
   color: #040404;
   display: grid;
-  margin-right: 20px;
   padding-top: 1rem;
-  grid-template-columns: repeat(4, 250px);
-  grid-column-gap: 1rem;
   text-align: right;
-  font-size: 1rem; 
-}
-
-.button2 {
-  float: right;
-  color: #000000;
-  background-color: #FFEC9E;
-  padding: 2px 100px;
-  border-radius: 50px;
-  font-weight: bolder;
-  font-size: 0.8rem;
-  display: inline-block;
-  margin-top: 10px;
-  text-align: center;
-  min-width: 150px;
-  min-height: 40px;
-}
-
-.button2:hover{
-  background-color: #ED9455;
-}
-
-.container {
-  display: grid;
-  align-items: center;
-  padding-left: 7rem;
-}
-
-.store-img3 {
-  width: 275px;
-  padding-top: 3rem;
-}
-
-.teksC {
-  float: left;
-  color: #040404;
-  display: grid;
-  margin-right: 20px;
-  padding-top: 1rem;
-  grid-template-columns: repeat(4, 250px);
-  grid-column-gap: 1rem;
-  text-align: justify;
   font-size: 1rem;
 }
 
 table {
   width: 100%;
-  border: collapse;
+  border-collapse: collapse;
 }
 
 td {
@@ -228,8 +138,7 @@ td {
   padding: 0 10px; 
 }
 
-.button3 {
-  float: left;
+.button1, .button3 {
   color: #000000;
   background-color: #FFEC9E;
   padding: 2px 100px;
@@ -241,8 +150,24 @@ td {
   text-align: center;
   min-width: 150px;
   min-height: 40px;
+  margin-left: -15%;
 }
 
-.button3:hover{
+.button2 {
+  color: #000000;
+  background-color: #FFEC9E;
+  padding: 2px 100px;
+  border-radius: 50px;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  min-width: 150px;
+  min-height: 40px;
+  margin-left: 68%;
+}
+
+.button1:hover, .button2:hover, .button3:hover {
   background-color: #ED9455;
 }
