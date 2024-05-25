@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffe Shop - Team 19</title>
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Logo-->
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
+    <!--Feather Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!--My Style-->
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body style="background-image: url(../img/bgcoffee.png)">
+    <!-- berfungsi sebagai container pada class tersebut untuk memberi setiap batasan ke tiap object yang ingin dibuat -->
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="navbar-logo"><img src="../img/logo.png" alt="" /></a>
+        <div class="navbar-nav">
+          <a href="../index.html">Home</a>
+          <a class="active-navbar" href="">Menu</a>
+          <a href="#member">Member</a>
+          <a href="#contact">Contact</a>
+          <a href="../halaman/analysis.html">Analysis</a>
+        </div>
+
+        <div class="navbar-extra">
+          <a href="#" id="search"><i data-feather="search"></i></a>
+          <a href="#" id="favorite"><i data-feather="heart"></i></a>
+          <a href="#" id="shoping-cart"><i data-feather="shopping-cart"></i></a>
+          <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+
+        <button class="btn-login"><b>Login</b></button>
+      </nav>
+
+      <div class="menu_colapse">
+        <div class="photo-coffe">
+          <img class="photo-1">
+        </div>
+        <div class="photo-coffe">
+          <img class="photo-2">
+        </div>
+        <div class="photo-coffe">
+          <img class="photo-3">
+        </div>
+        <div class="photo-coffe">
+          <img class="photo-4">
+        </div>
+      </div>
+    </div>
+
+    <!-- start team -->
+    <div class="container-wrapper">
+      <div id="team">
+        <h1>TEAM</h1>
+      </div>
+      <div class="wrapper">
+        <!-- icon -->
+        <svg
+          id="left"
+          fill="#86654B"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="#86654B"
+          transform="rotate(0)matrix(-1, 0, 0, 1, 0, 0)"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title>ionicons-v5-b</title>
+            <polygon points="144 448 368 256 144 64 144 448"></polygon>
+          </g>
+        </svg>
+        <!--end icon  -->
+    <footer class="footer">
+      <div>
+        <p class="footer-text">&copy; Coffe Shop</p>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <!--My Javascript-->
+    <script src="../script.js"></script>
+  </body>
+</html>
