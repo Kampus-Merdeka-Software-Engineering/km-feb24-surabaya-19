@@ -159,48 +159,114 @@ body {
 }
 
 
+.container-table {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
 
-.dropdown-table {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-container label,
+.filter-container select,
+.filter-container input {
+  margin: 10px;
+}
+
+.filter-container button {
+  margin-left: 10px;
+  padding: 10px 20px 10px 20px;
+  background-color: #fbc48d;
+  border-radius: 20px;
+}
+
+.filter-container.active button {
+  background-color: #a06500;
+  transition: background-color 0.5s; /* Menambahkan properti transisi */
 }
 
 .table-container {
-    margin-bottom: 40px;
-}
-
-.table-container h2 {
-    text-align: left;
-    color: #333;
-    margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 .styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead tr {
-    background-color: #a06500;
-    color: #ffffff;
-    text-align: left;
+  background-color: #a06500;
+  color: #ffffff;
+  text-align: left;
 }
 
-.styled-table th, .styled-table td {
-    padding: 12px 15px;
-    border: 1px solid #dddddd;
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #a06500;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #a06500;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.2em;
+}
+
+.footer {
+  background-color: #a06500;
+  color: #fff;
+  position: fixed; /* Mengubah posisi menjadi sticky */
+  width: 100%;
+  height: 80px;
+}
+
+.footer-text {
+  text-align: center;
+  justify-content: center;
+  margin-top: 25px;
 }

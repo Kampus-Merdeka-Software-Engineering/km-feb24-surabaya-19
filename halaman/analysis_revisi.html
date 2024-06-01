@@ -13,7 +13,7 @@
           <div class="navbar-nav">
             <a href="../index.html">Home</a>
             <a href="../halaman/menu.html">Menu</a>
-            <a href="#member">Member</a>
+            <a href="../halaman/store.html">Member</a>
             <a href="#contact">Contact</a>
             <a class="active-navbar" href="#">Analysis</a>
           </div>
@@ -28,19 +28,34 @@
           <button class="btn-login"><b>Login</b></button>
         </nav>
 
-    <div>
-        <select class="dropdown-table" id="dropdown-table">
-            <option value="all">All</option>
-            <option value="store-location">Location Store</option>
-            <option value="product-category">Product Category</option>
-            <option value="total-salary">Total Salary</option>
+        <h1>Tabel Data Coffee Shop Sales</h1>
+    <div class="filter-container">
+        <label for="filter-type">Filter by:</label>
+        <select id="filter-type">
+            <option value="store_location">Store Location</option>
+            <option value="product_category">Product Category</option>
+            <option value="product_type">Product Type</option>
         </select>
+        <input type="text" id="filter-value" placeholder="Enter filter value">
+        <button id="filter-button">Filter</button>
     </div>
-    <div id="data-table"></div>
+    <div class="container-table">
+        <div id="data-table"></div>
+        <div class="pagination">
+            <button id="prev-button">Previous</button>
+            <span id="page-info"></span>
+            <button id="next-button">Next</button>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+      <div>
+        <p class="footer-text">&copy; Coffe Shop</p>
+      </div>
+    </footer>
 
     <!-- External JavaScript File -->
     <script src="/sheet2.js"></script>
-    <script src="/script_analysis.js"></script>
 </body>
 </html>
 
