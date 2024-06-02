@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', init);
         }
 
         function loadData(url, callback) {
-            fetch(url)
+            fetch(coffeeShopData)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
