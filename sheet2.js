@@ -228,30 +228,36 @@ function initializeChart(selector, title) {
 
 // Inisialisasi grafik harian
 const chartJsDaily = initializeChart(
-  "chart-daily"
-  // "Total Transaksi per Hari untuk setiap lokasi toko"
+  "chart-daily",
+  "Total Transaksi per Hari untuk setiap lokasi toko"
 );
 // Inisialisasi grafik per jam
 const chartJsTime = initializeChart(
-  "chart-time"
-  // "Total Transaksi per Jam untuk setiap lokasi toko"
+  "chart-time",
+  "Total Transaksi per Jam untuk setiap lokasi toko"
 );
+
+// Parameter untuk menentukan kategori produk
+const productCategory = "Packaged Chocolate"; // Ganti dengan kategori yang diinginkan atau kosongkan untuk menampilkan semua kategori produk
+// "Branded",
+// "Loose Tea",
+// "Coffee beans",
+// "Flavours",
+// "Drinking Chocolate",
+// "Bakery",
+// "Tea",
+// "Coffee"
 
 // Fetch dan proses data dari file JSON
 fetch("../coffeeShopSalesData.json")
   .then((response) => response.json())
   .then((data) => {
-    const filteredData = data.filter(
-      (item) => item.product_category === "Packaged Chocolate"
-      // item.product_category === "Branded",
-      // item.product_category === "Loose Tea",
-      // item.product_category === "Coffee beans",
-      // item.product_category === "Flavours",
-      // item.product_category === "Drinking Chocolate",
-      // item.product_category === "Bakery",
-      // item.product_category === "Tea",
-      // item.product_category === "Coffee"
-    );
+    let filteredData = data;
+    if (productCategory) {
+      filteredData = data.filter(
+        (item) => item.product_category === productCategory
+      );
+    }
 
     const dailyChartData = processDailyData(filteredData);
     updateChart(chartJsDaily, dailyChartData);
@@ -304,9 +310,6 @@ function processHourlyData(data) {
   data.forEach((item) => {
     const hour = parseInt(item.transaction_time.split(":")[0]);
     const storeLocation = item.store_location;
-    const timeLabel = `${hour.toString().padStart(2, "0")}:00 - ${hour
-      .toString()
-      .padStart(2, "0")}:59`;
 
     if (!hourlyTransactions[hour].locations[storeLocation]) {
       hourlyTransactions[hour].locations[storeLocation] = 0;
