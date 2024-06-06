@@ -63,27 +63,61 @@ document.addEventListener("click", function (e) {
 const photo_coffe = document.querySelectorAll(".photo_coffe");
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Define chart contexts
+  let initialData = [];
+  let totalTransactionQty = 0;
+
   const chartCtx = document.getElementById("chart-store").getContext("2d");
   const barchart1Ctx = document.getElementById("barchart1").getContext("2d");
   const barchart2Ctx = document.getElementById("barchart2").getContext("2d");
   const dailyChartContext = document.getElementById("chart-daily").getContext("2d");
   const timeChartContext = document.getElementById("chart-time").getContext("2d");
 
-  // Create charts using predefined functions
   const chartJs = createDoughnutChart(chartCtx);
   const barchart1 = createBarChart(barchart1Ctx, "Total Transactions by Product Category");
   const barchart2 = createBarChart(barchart2Ctx, "Total Monthly Transactions in Each Store");
   const chartJsDaily = createLineChart(dailyChartContext, "Total Transactions per Day for Each Store Location");
   const chartJsTime = createLineChart(timeChartContext, "Total Transactions per Hour for Each Store Location");
 
-  // Fetch and display initial data for specific store locations
-  fetchAndDisplayInitialData();
+  // Function to initialize totalTransactionQty from initialData
+  function initializeTotalTransactionQty(data) {
+    totalTransactionQty = data.reduce((total, item) => total + parseInt(item.transaction_qty), 0);
+  }
 
-  // Initialize dropdowns
+  // Fetch initial data
+  fetchInitialData().then(data => {
+    initialData = data;
+    initializeTotalTransactionQty(initialData);
+    updateFilteredData([], []); // Initialize with all data
+  });
+
+  function updateFilteredData(selectedOptions1, selectedOptions2) {
+    fetchData(selectedOptions1, selectedOptions2)
+      .then(filteredData => {
+        const dataDropdown = document.getElementById('dataDropdown');
+        const totalTransactionDiv = document.getElementById('totalTransactionDiv');
+
+        if (dataDropdown) {
+          dataDropdown.innerHTML = '';
+          filteredData.forEach(item => {
+            const content = document.createElement('div');
+            content.innerText = `${item.product_category}: ${item.transaction_qty}`;
+            dataDropdown.appendChild(content);
+          });
+          dataDropdown.classList.add('show');
+        }
+
+        const filteredTransactionQty = filteredData.reduce((total, item) => total + parseInt(item.transaction_qty), 0);
+
+        if (totalTransactionDiv) {
+          totalTransactionDiv.innerText = `Total Transaction Quantity: ${filteredTransactionQty}`;
+        }
+
+        updateCharts(chartJs, barchart1, barchart2, chartJsDaily, chartJsTime, filteredData);
+      });
+  }
+
   initializeDropdowns();
 
-  // Close dropdown if clicked outside
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.dropdown')) {
       document.querySelectorAll('.menu').forEach(menu => {
@@ -97,15 +131,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const select = dropdown.querySelector('.select');
       const menu = dropdown.querySelector('.menu');
       const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
-      const totalTransactionDiv = document.querySelector('.total-transaction');
 
-      // Initialize checkboxes as checked
       checkboxes.forEach(checkbox => {
         checkbox.checked = true;
-        
       });
 
-      // Function to update selection and fetch data
       const updateSelection = () => {
         const selectedOptions1 = Array.from(document.querySelectorAll('.dropdown1 input[type="checkbox"]'))
           .filter(cb => cb.checked)
@@ -121,103 +151,82 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.dropdown1 .selected').innerText = selectedText1;
         document.querySelector('.dropdown2 .selected').innerText = selectedText2;
 
-        fetchData(selectedOptions1, selectedOptions2)
-          .then(filteredData => {
-            let totalTransactionQty = transaction_qty;
-            const dataDropdown = document.getElementById('dataDropdown');
-            const totalTransactionDiv = document.getElementById('totalTransactionDiv');
-
-            dataDropdown.innerHTML = '';
-            filteredData.forEach(item => {
-              const content = document.createElement('div');
-              content.innerText = `${item.product_category}: ${item.transaction_qty}`;
-              dataDropdown.appendChild(content);
-              totalTransactionQty += item.transaction_qty;
-            });
-
-            dataDropdown.classList.add('show');
-            totalTransactionDiv.innerText = `Total Transaction Quantity: ${totalTransactionQty}`;
-
-            // Update all charts with filtered data
-            updateCharts(chartJs, barchart1, barchart2, chartJsDaily, chartJsTime, filteredData);
-          })
-          .catch(error => {
-            console.error("Error fetching data: ", error);
-          });
+        updateFilteredData(selectedOptions1, selectedOptions2);
       };
 
-      // Initialize update for default checked checkboxes
       updateSelection();
 
-      // Add event listener to each checkbox for change event
       checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', updateSelection);
       });
 
-      // Add event listener to toggle menu visibility
       select.addEventListener('click', () => {
         menu.classList.toggle('menu-open');
         select.classList.toggle('select-clicked');
         const pickme = dropdown.querySelector('.pickme');
-        pickme.classList.toggle('pickme-rotate');
+        if (pickme) {
+          pickme.classList.toggle('pickme-rotate');
+        }
       });
     });
   }
 
-  function fetchAndDisplayInitialData() {
-    fetch("/coffeeShopSalesData.json")
-      .then(response => response.json())
-      .then(data => {
-        const selectedLocations = ["Lower Manhattan", "Astoria", "Hell's Kitchen"];
-        const selectedOptions1 = Array.from(document.querySelectorAll('.dropdown1 input[type="checkbox"]'))
-          .filter(cb => cb.checked)
-          .map(cb => cb.value);
-
-        const selectedOptions2 = Array.from(document.querySelectorAll('.dropdown2 input[type="checkbox"]'))
-          .filter(cb => cb.checked)
-          .map(cb => cb.value);
-          console.log("Sebelum hasil filter ", data.length)
-
-        const filteredData = data.filter(item => 
-          selectedLocations.includes(item.store_location) &&
-          selectedOptions1.includes(item.product_category) && 
-          selectedOptions2.includes(item.product_detail)
-        );
-
-        console.log("data dari product_detail", selectedOptions2)
-        console.log("Ini hasil filter ", filteredData.length)
-
-        // Update all charts with filtered initial data
-        updateCharts(chartJs, barchart1, barchart2, chartJsDaily, chartJsTime, filteredData);
-      })
-      .catch(error => {
-        console.error("Error fetching data: ", error);
-      });
+  async function fetchInitialData() {
+    const response = await fetch("/coffeeShopSalesData.json");
+    const data = await response.json();
+    return data.map(item => ({
+      product_category: item.product_category,
+      product_detail: item.product_detail,
+      transaction_qty: item.transaction_qty,
+      store_location: item.store_location,
+      transaction_date: item.transaction_date,
+      transaction_time: item.transaction_time,
+      transaction_id: item.transaction_id,
+      store_id: item.store_id,
+      product_id: item.product_id,
+      unit_price: item.unit_price,
+      product_type: item.product_type
+    }));
   }
 
   async function fetchData(selectedOptions1, selectedOptions2) {
-    const cachedData = localStorage.getItem('cachedData');
-    if (cachedData) {
-      const parsedData = JSON.parse(cachedData);
-      return filterData(parsedData, selectedOptions1, selectedOptions2);
-    } else {
       const response = await fetch("/coffeeShopSalesData.json");
       const data = await response.json();
-      localStorage.setItem('cachedData', JSON.stringify(data));
-      return filterData(data, selectedOptions1, selectedOptions2);
-    }
+
+      const reducedData = data.map(item => ({
+        product_category: item.product_category,
+        product_detail: item.product_detail,
+        transaction_qty: item.transaction_qty,
+        store_location: item.store_location,
+        transaction_date: item.transaction_date,
+        transaction_time: item.transaction_time,
+        transaction_id: item.transaction_id,
+        store_id: item.store_id,
+        product_id: item.product_id,
+        unit_price: item.unit_price,
+        product_type: item.product_type
+      }));
+
+      try {
+        sessionStorage.setItem('cachedData', JSON.stringify(reducedData));
+      } catch (error) {
+        console.error("Error storing data in sessionStorage:", error);
+      }
+      return filterData(reducedData, selectedOptions1, selectedOptions2);
   }
 
-  function filterData(data, selectedOptions) {
+  function filterData(data, selectedOptions1, selectedOptions2) {
+    if (selectedOptions1.length === 0 && selectedOptions2.length === 0) {
+      return data;
+    }
+
     return data.filter(item =>
-      selectedOptions.includes(item.product_category.selectedOptions1) &&
-      selectedOptions.includes(item.product_detail.selectedOptions2)
+      (selectedOptions1.length === 0 || selectedOptions1.includes(item.product_category)) &&
+      (selectedOptions2.length === 0 || selectedOptions2.includes(item.product_detail))
     );
   }
 
-
   function updateCharts(chart1, chart2, chart3, chart4, chart5, data) {
-    console.log("Ini datanya", data.length)
     updateDoughnutChart(chart1, data);
     updateBarChart1(chart2, data);
     updateBarChart2(chart3, data);
@@ -329,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         label: storeLocation,
         value: totalTransaction,
         backgroundColor: backgroundColors[index % backgroundColors.length],
-        borderColor: borderColors[index % borderColors.length],
+        borderColor: borderColors[index % backgroundColors.length],
       };
     });
 

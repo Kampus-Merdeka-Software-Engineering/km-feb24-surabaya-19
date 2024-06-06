@@ -46,7 +46,7 @@ body {
 
 .container {
   display: grid;
-  margin: 10%;
+  margin-top: 10%;
 }
 
 /* Navbar */
@@ -114,33 +114,10 @@ body {
   display: none;
 }
 
-/* Media Queries */
-/* Laptop */
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-
-  #hamburger-menu {
-    display: inline-block;
-  }
-}
-
-/* Mobile Phone */
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-}
-
 .kotak_analysis-1 {
   background-color: #ffe2b0;
   height: 740px;
-  width: 1243px;
+  width: 1150px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 50px;
   position: relative;
@@ -152,26 +129,31 @@ body {
 .kotak_analysis-2 {
   background-color: #a06500;
   height: 94%;
-  width: 96%; /* Lebar maksimum elemen */
+  width: 96%;
   border-radius: 50px;
   display: flex;
-  align-items: center; /* Menyusun elemen ke tengah secara vertikal */
-  justify-content: center; /* Menyusun elemen ke tengah secara horizontal */
+  align-items: center;
+  justify-content: center;
 }
 
 .product_category-box {
-  background-color: white;
   height: 200px;
-  width: 700px;
+  width: 650px;
+  display: flex; /* Untuk memusatkan isi di dalam kotak */
+  align-items: center; /* Vertikal */
+  justify-content: center; /* Horizontal */
 }
 
 .product_category-circle {
   background-color: white;
   height: 200px;
   width: 200px;
-  margin: 0em auto;
+  border-radius: 100%; /* Menjadikannya lingkaran */
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .dropdown1 {
   min-width: 14em;
@@ -237,9 +219,11 @@ body {
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
+  max-height: 40vh; /* Membatasi tinggi maksimal elemen */
+  overflow-y: auto; /* Memungkinkan scrolling vertikal jika diperlukan */
   opacity: 0;
-  visibility: hidden; /* Mengganti display: none; */
-  transition: opacity 0.2s, visibility 0s linear 0.2s; /* Mengganti transition: 0.2s; */
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0s linear 0.2s;
   z-index: 1;
 }
 
@@ -308,27 +292,19 @@ body {
 }
 
 .chart {
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
   height: 100%;
   width: 100%;
   max-width: 200px;
 }
 
 .chart-line1 {
-  background-color: #fff;
-  border-radius: 10px;
   height: 100%;
   width: 100%;
-  border: 4px solid #ffc107;
 }
 
 .chart-line2 {
-  background-color: #fff;
-  border-radius: 10px;
   height: 100%;
   width: 100%;
-  border: 4px solid #ffc107;
 }
 
 canvas {
@@ -336,4 +312,391 @@ canvas {
   max-height: 200px;
   background: white;
   border: 4px solid #ffc107;
+  border-radius: 10px;
+}
+
+@media (min-width: 1920px) {
+  /* Navbar */
+.navbar {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%; /* Menentukan lebar navbar agar mengisi seluruh lebar layar */
+  height: 80px; /* Menentukan tinggi navbar */
+}
+
+.navbar .navbar-logo img {
+  width: 100px;
+  margin-right: 15%;
+}
+
+.navbar .navbar-nav a {
+  color: var(--primary); /* Menggunakan variabel --primary */
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #856565;
+}
+
+.navbar .navbar-nav a:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+.navbar .navbar-extra a {
+  color: #040404;
+  margin: 0 0.5rem;
+  padding: 0 10px;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #fbc48d;
+}
+
+.active-navbar {
+  background-color: #ffbb70;
+  color: #292929;
+  border-radius: 40px;
+  font-weight: bold;
+}
+
+.active-navbar:hover {
+  color: #292929 !important;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+.kotak_analysis-1 {
+  background-color: #ffe2b0;
+  height: 740px;
+  width: 1150px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kotak_analysis-2 {
+  background-color: #a06500;
+  height: 94%;
+  width: 96%;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_category-box {
+  height: 200px;
+  width: 650px;
+  display: flex; /* Untuk memusatkan isi di dalam kotak */
+  align-items: center; /* Vertikal */
+  justify-content: center; /* Horizontal */
+}
+
+.product_category-circle {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%; /* Menjadikannya lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dropdown1 {
+  min-width: 14em;
+  position: relative;
+}
+
+.dropdown2 {
+  min-width: 14em;
+  position: relative;
+}
+
+.dropdown1 * {
+  box-sizing: border-box;
+}
+
+.dropdown2 * {
+  box-sizing: border-box;
+}
+
+.select {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #a06600 solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.select-clicked {
+  border: 2px #a06600 solid;
+  box-shadow: 0 0 0.8em #a06600;
+}
+
+.select:hover {
+  background: grey;
+}
+
+.pickme {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid black;
+  transition: 0.3s;
+}
+
+.pickme-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: white;
+  border: 1px #a06600 solid;
+  color: black;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  max-height: 40vh; /* Membatasi tinggi maksimal elemen */
+  overflow-y: auto; /* Memungkinkan scrolling vertikal jika diperlukan */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0s linear 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #a06600;
+}
+
+.menu-open {
+  opacity: 1;
+  visibility: visible; /* Mengganti display: block; */
+  transition: opacity 0.2s, visibility 0s; /* Mengganti transition: 0.2s; */
+}
+
+.hidden {
+  display: none;
+}
+
+.total-transaction {
+  background-color: white;
+  height: 75px;
+  width: 220px;
+  border-radius: 10px;
+}
+
+.btn-login {
+  background-color: #ffec9e;
+  padding: 18px 55px 18px 55px;
+  border-radius: 50px;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.btn-login:hover {
+  background-color: #ed9455;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.footer {
+  background-color: #a06500;
+  color: #fff;
+  position: fixed; /* Mengubah posisi menjadi sticky */
+  width: 100%;
+  height: 80px;
+}
+
+.footer-text {
+  text-align: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.menu_colapse {
+  background-color: white;
+  width: 1000px;
+  height: 300px;
+  position: relative;
+  display: flex;
+}
+
+.chart {
+  height: 100%;
+  width: 100%;
+  max-width: 200px;
+}
+
+.chart-line1 {
+  height: 100%;
+  width: 100%;
+}
+
+.chart-line2 {
+  height: 100%;
+  width: 100%;
+}
+
+canvas {
+  width: 100% !important;
+  max-height: 200px;
+  background: white;
+  border: 4px solid #ffc107;
+  border-radius: 10px;
+}
+}
+
+@media (max-width: 1024px) {
+  .kotak_analysis-1 {
+      height: 370px;
+      width: 575px;
+  }
+
+  .product_category-box {
+      height: 100px;
+      width: 325px;
+  }
+
+  .product_category-circle {
+      height: 100px;
+      width: 100px;
+  }
+
+  .navbar {
+      height: 40px;
+  }
+
+  .navbar .navbar-logo img {
+      width: 50px;
+  }
+
+  .dropdown1, .dropdown2 {
+      min-width: 7em;
+  }
+
+  .select {
+      padding: 0.5em;
+  }
+
+  .total-transaction {
+      height: 37.5px;
+      width: 110px;
+  }
+
+  .btn-login {
+      padding: 9px 27.5px;
+      font-size: 9px;
+  }
+
+  .footer {
+      height: 40px;
+  }
+
+  .footer-text {
+      margin-top: 12.5px;
+  }
+
+  .menu_colapse {
+      height: 150px;
+  }
+
+  .chart {
+      max-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kotak_analysis-1 {
+      height: 185px;
+      width: 287.5px;
+  }
+
+  .product_category-box {
+      height: 50px;
+      width: 162.5px;
+  }
+
+  .product_category-circle {
+      height: 50px;
+      width: 50px;
+  }
+
+  .navbar {
+      height: 20px;
+  }
+
+  .navbar .navbar-logo img {
+      width: 25px;
+  }
+
+  .dropdown1, .dropdown2 {
+      min-width: 3.5em;
+  }
+
+  .select {
+      padding: 0.25em;
+  }
+
+  .total-transaction {
+      height: 18.75px;
+      width: 55px;
+  }
+
+  .btn-login {
+      padding: 4.5px 13.75px;
+      font-size: 4.5px;
+  }
+
+  .footer {
+      height: 20px;
+  }
+
+  .footer-text {
+      margin-top: 6.25px;
+  }
+
+  .menu_colapse {
+      height: 75px;
+  }
+
+  .chart {
+      max-width: 50px;
+  }
 }

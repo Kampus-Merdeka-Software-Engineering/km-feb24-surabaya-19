@@ -50,7 +50,7 @@
                     TOTAL TRANSACTION OF PRODUCT CATEGORY​
                   </h1>
                   <div class="product_category-box">
-                    <canvas id="barchart1" width="700" height="200"></canvas>
+                    <canvas id="barchart1"></canvas>
                   </div>
                 </section>
               </td>
@@ -73,37 +73,52 @@
               </td>
               <td>
                 <aside class="transaction-product_category">
-                  <div id="dropdown1"class="dropdown1">
+                  <div id="dropdown1" class="dropdown1">
                     <div class="select">
                       <span class="selected"></span>
                       <div class="pickme"></div>
                     </div>
                     <ul class="menu">
                       <li>
-                        <input type="checkbox" value="Packaged Chocolate" onchange="updateCharts()"/>
+                        <input type="checkbox" value="Packaged Chocolate"/>
                         Packaged Chocolate
                       </li>
-                      <li><input type="checkbox" value="Branded" onchange="updateCharts()"/> Branded</li>
                       <li>
-                        <input type="checkbox" value="Loose Tea" onchange="updateCharts()"/> Loose Tea
+                        <input type="checkbox" value="Branded"/>
+                        Branded
                       </li>
                       <li>
-                        <input type="checkbox" value="Coffee beans" onchange="updateCharts()"/> Coffee
-                        beans
+                        <input type="checkbox" value="Loose Tea"/>
+                        Loose Tea
                       </li>
                       <li>
-                        <input type="checkbox" value="Flavours" onchange="updateCharts()"/> Flavours
+                        <input type="checkbox" value="Coffee beans"/>
+                        Coffee beans
                       </li>
                       <li>
-                        <input type="checkbox" value="Drinking Chocolate" />
+                        <input type="checkbox" value="Flavours"/>
+                        Flavours
+                      </li>
+                      <li>
+                        <input type="checkbox" value="Drinking Chocolate"/>
                         Drinking Chocolate
                       </li>
-                      <li><input type="checkbox" value="Bakery" /> Bakery</li>
-                      <li><input type="checkbox" value="Tea" /> Tea</li>
-                      <li><input type="checkbox" value="Coffee" /> Coffee</li>
+                      <li>
+                        <input type="checkbox" value="Bakery"/>
+                        Bakery
+                      </li>
+                      <li>
+                        <input type="checkbox" value="Tea"/>
+                        Tea
+                      </li>
+                      <li>
+                        <input type="checkbox" value="Coffee"/>
+                        Coffee
+                      </li>
                     </ul>
                   </div>
-
+                
+                  <!-- Dropdown 2 -->
                   <div id="dropdown2" class="dropdown2">
                     <div class="select">
                       <span class="selected"></span>
@@ -111,394 +126,372 @@
                     </div>
                     <ul class="menu">
                       <li>
-                        <input type="checkbox" value="Almond Croissant" />
+                        <input type="checkbox" value="Almond Croissant"/>
                         Almond Croissant
                       </li>
                       <li>
-                        <input type="checkbox" value="Brazilian - Organic" />
+                        <input type="checkbox" value="Brazilian - Organic"/>
                         Brazilian - Organic
                       </li>
                       <li>
-                        <input type="checkbox" value="Brazilian Lg" /> Brazilian
-                        Lg
+                        <input type="checkbox" value="Brazilian Lg"/>
+                        Brazilian Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Brazilian Rg" /> Brazilian
-                        Rg
+                        <input type="checkbox" value="Brazilian Rg"/>
+                        Brazilian Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Brazilian Sm" /> Brazilian
-                        Sm
+                        <input type="checkbox" value="Brazilian Sm"/>
+                        Brazilian Sm
                       </li>
                       <li>
-                        <input type="checkbox" value="Cappuccino" /> Cappuccino
+                        <input type="checkbox" value="Cappuccino"/>
+                        Cappuccino
                       </li>
                       <li>
-                        <input type="checkbox" value="Cappuccino Lg" />
+                        <input type="checkbox" value="Cappuccino Lg"/>
                         Cappuccino Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Carmel syrup" /> Carmel
-                        syrup
+                        <input type="checkbox" value="Carmel syrup"/>
+                        Carmel syrup
                       </li>
                       <li>
-                        <input type="checkbox" value="Chili Mayan" /> Chili
-                        Mayan
+                        <input type="checkbox" value="Chili Mayan"/>
+                        Chili Mayan
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Chocolate Chip Biscotti"
-                        />
+                        <input type="checkbox" value="Chocolate Chip Biscotti"/>
                         Chocolate Chip Biscotti
                       </li>
                       <li>
-                        <input type="checkbox" value="Chocolate Croissant" />
+                        <input type="checkbox" value="Chocolate Croissant"/>
                         Chocolate Croissant
                       </li>
                       <li>
-                        <input type="checkbox" value="Chocolate syrup" />
+                        <input type="checkbox" value="Chocolate syrup"/>
                         Chocolate syrup
                       </li>
                       <li>
-                        <input type="checkbox" value="Civet Cat" /> Civet Cat
+                        <input type="checkbox" value="Civet Cat"/>
+                        Civet Cat
                       </li>
                       <li>
-                        <input type="checkbox" value="Columbian Medium Roast" />
+                        <input type="checkbox" value="Columbian Medium Roast"/>
                         Columbian Medium Roast
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Columbian Medium Roast Lg"
-                        />
+                        <input type="checkbox" value="Columbian Medium Roast Lg"/>
                         Columbian Medium Roast Lg
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Columbian Medium Roast Rg" onclick="filteredData"
-                        />
+                        <input type="checkbox" value="Columbian Medium Roast Rg"/>
                         Columbian Medium Roast Rg
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Columbian Medium Roast Sm"
-                          onclick="filteredData"
-                        />
+                        <input type="checkbox" value="Columbian Medium Roast Sm"/>
                         Columbian Medium Roast Sm
                       </li>
                       <li>
-                        <input type="checkbox" value="Cranberry Scone"  />
+                        <input type="checkbox" value="Cranberry Scone"/>
                         Cranberry Scone
                       </li>
                       <li>
-                        <input type="checkbox" value="Croissant" /> Croissant
+                        <input type="checkbox" value="Croissant"/>
+                        Croissant
                       </li>
                       <li>
-                        <input type="checkbox" value="Dark chocolate" /> Dark
-                        chocolate
+                        <input type="checkbox" value="Dark chocolate"/>
+                        Dark chocolate
                       </li>
                       <li>
-                        <input type="checkbox" value="Dark chocolate Lg" /> Dark
-                        chocolate Lg
+                        <input type="checkbox" value="Dark chocolate Lg"/>
+                        Dark chocolate Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Dark chocolate Rg" /> Dark
-                        chocolate Rg
+                        <input type="checkbox" value="Dark chocolate Rg"/>
+                        Dark chocolate Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Earl Grey" /> Earl Grey
+                        <input type="checkbox" value="Earl Grey"/>
+                        Earl Grey
                       </li>
                       <li>
-                        <input type="checkbox" value="Earl Grey Lg" /> Earl Grey
-                        Lg
+                        <input type="checkbox" value="Earl Grey Lg"/>
+                        Earl Grey Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Earl Grey Rg" /> Earl Grey
-                        Rg
+                        <input type="checkbox" value="Earl Grey Rg"/>
+                        Earl Grey Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="English Breakfast" />
+                        <input type="checkbox" value="English Breakfast"/>
                         English Breakfast
                       </li>
                       <li>
-                        <input type="checkbox" value="English Breakfast Lg" />
+                        <input type="checkbox" value="English Breakfast Lg"/>
                         English Breakfast Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="English Breakfast Rg" />
+                        <input type="checkbox" value="English Breakfast Rg"/>
                         English Breakfast Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Espresso Roast" />
+                        <input type="checkbox" value="Espresso Roast"/>
                         Espresso Roast
                       </li>
                       <li>
-                        <input type="checkbox" value="Espresso shot" /> Espresso
-                        shot
+                        <input type="checkbox" value="Espresso shot"/>
+                        Espresso shot
                       </li>
                       <li>
-                        <input type="checkbox" value="Ethiopia" /> Ethiopia
+                        <input type="checkbox" value="Ethiopia"/>
+                        Ethiopia
                       </li>
                       <li>
-                        <input type="checkbox" value="Ethiopia Lg" /> Ethiopia
-                        Lg
+                        <input type="checkbox" value="Ethiopia Lg"/>
+                        Ethiopia Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Ethiopia Rg" /> Ethiopia
-                        Rg
+                        <input type="checkbox" value="Ethiopia Rg"/>
+                        Ethiopia Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Ethiopia Sm" /> Ethiopia
-                        Sm
+                        <input type="checkbox" value="Ethiopia Sm"/>
+                        Ethiopia Sm
                       </li>
                       <li>
-                        <input type="checkbox" value="Ginger Biscotti" /> Ginger
-                        Biscotti
+                        <input type="checkbox" value="Ginger Biscotti"/>
+                        Ginger Biscotti
                       </li>
                       <li>
-                        <input type="checkbox" value="Ginger Scone" /> Ginger
-                        Scone
+                        <input type="checkbox" value="Ginger Scone"/>
+                        Ginger Scone
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Guatemalan Sustainably Grown"
-                        />
+                        <input type="checkbox" value="Guatemalan Sustainably Grown"/>
                         Guatemalan Sustainably Grown
                       </li>
                       <li>
-                        <input type="checkbox" value="Hazelnut Biscotti" />
+                        <input type="checkbox" value="Hazelnut Biscotti"/>
                         Hazelnut Biscotti
                       </li>
                       <li>
-                        <input type="checkbox" value="Hazelnut syrup" />
+                        <input type="checkbox" value="Hazelnut syrup"/>
                         Hazelnut syrup
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="I Need My Bean! Diner mug"
-                        />
+                        <input type="checkbox" value="I Need My Bean! Diner mug"/>
                         I Need My Bean! Diner mug
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="I Need My Bean! Latte cup"
-                        />
+                        <input type="checkbox" value="I Need My Bean! Latte cup"/>
                         I Need My Bean! Latte cup
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="I Need My Bean! T-shirt"
-                        />
+                        <input type="checkbox" value="I Need My Bean! T-shirt"/>
                         I Need My Bean! T-shirt
                       </li>
                       <li>
-                        <input type="checkbox" value="Jamacian Coffee River" />
+                        <input type="checkbox" value="Jamacian Coffee River"/>
                         Jamacian Coffee River
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Jamaican Coffee River Lg"
-                        />
+                        <input type="checkbox" value="Jamaican Coffee River Lg"/>
                         Jamaican Coffee River Lg
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Jamaican Coffee River Rg"
-                        />
+                        <input type="checkbox" value="Jamaican Coffee River Rg"/>
                         Jamaican Coffee River Rg
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Jamaican Coffee River Sm"
-                        />
+                        <input type="checkbox" value="Jamaican Coffee River Sm"/>
                         Jamaican Coffee River Sm
                       </li>
                       <li>
-                        <input type="checkbox" value="Jumbo Savory Scone" />
+                        <input type="checkbox" value="Jumbo Savory Scone"/>
                         Jumbo Savory Scone
                       </li>
-                      <li><input type="checkbox" value="Latte" /> Latte</li>
                       <li>
-                        <input type="checkbox" value="Latte Rg" /> Latte Rg
+                        <input type="checkbox" value="Latte"/>
+                        Latte
                       </li>
                       <li>
-                        <input type="checkbox" value="Lemon Grass" /> Lemon
-                        Grass
+                        <input type="checkbox" value="Latte Rg"/>
+                        Latte Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Lemon Grass Lg" /> Lemon
-                        Grass Lg
+                        <input type="checkbox" value="Lemon Grass"/>
+                        Lemon Grass
                       </li>
                       <li>
-                        <input type="checkbox" value="Lemon Grass Rg" /> Lemon
-                        Grass Rg
+                        <input type="checkbox" value="Lemon Grass Lg"/>
+                        Lemon Grass Lg
                       </li>
                       <li>
-                        <input type="checkbox" value="Morning Sunrise Chai" />
+                        <input type="checkbox" value="Lemon Grass Rg"/>
+                        Lemon Grass Rg
+                      </li>
+                      <li>
+                        <input type="checkbox" value="Morning Sunrise Chai"/>
                         Morning Sunrise Chai
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Morning Sunrise Chai Lg"
-                        />
+                        <input type="checkbox" value="Morning Sunrise Chai Lg"/>
                         Morning Sunrise Chai Lg
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Morning Sunrise Chai Rg"
-                        />
+                        <input type="checkbox" value="Morning Sunrise Chai Rg"/>
                         Morning Sunrise Chai Rg
                       </li>
                       <li>
-                        <input type="checkbox" value="Oatmeal Scone" /> Oatmeal
-                        Scone
+                        <input type="checkbox" value="Oatmeal Scone"/>
+                        Oatmeal Scone
                       </li>
                       <li>
-                        <input type="checkbox" value="Organic Decaf Blend" />
+                        <input type="checkbox" value="Organic Decaf Blend"/>
                         Organic Decaf Blend
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Our Old Time Diner Blend"
-                        />
+                        <input type="checkbox" value="Our Old Time Diner Blend"/>
                         Our Old Time Diner Blend
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          value="Our Old Time Diner Blend Lg"
-                        />
-                        Our Old Time Diner Blend Lg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Our Old Time Diner Blend Rg"
-                        />
-                        Our Old Time Diner Blend Rg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Our Old Time Diner Blend Sm"
-                        />
-                        Our Old Time Diner Blend Sm
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Ouro Brasileiro shot" />
-                        Ouro Brasileiro shot
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Peppermint" /> Peppermint
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Peppermint Lg" />
-                        Peppermint Lg
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Peppermint Rg" />
-                        Peppermint Rg
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Primo Espresso Roast" />
-                        Primo Espresso Roast
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Scottish Cream Scone" />
-                        Scottish Cream Scone
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Serenity Green Tea" />
-                        Serenity Green Tea
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Serenity Green Tea Lg" />
-                        Serenity Green Tea Lg
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Serenity Green Tea Rg" />
-                        Serenity Green Tea Rg
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Spicy Eye Opener Chai" />
-                        Spicy Eye Opener Chai
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Spicy Eye Opener Chai Lg"
-                        />
-                        Spicy Eye Opener Chai Lg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Spicy Eye Opener Chai Rg"
-                        />
-                        Spicy Eye Opener Chai Rg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Sugar Free Vanilla syrup"
-                        />
-                        Sugar Free Vanilla syrup
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Sustainably Grown Organic"
-                        />
-                        Sustainably Grown Organic
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Sustainably Grown Organic Lg"
-                        />
-                        Sustainably Grown Organic Lg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Sustainably Grown Organic Rg"
-                        />
-                        Sustainably Grown Organic Rg
-                      </li>
-                      <li>
-                        <input type="checkbox" value="Traditional Blend Chai" />
-                        Traditional Blend Chai
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Traditional Blend Chai Lg"
-                        />
-                        Traditional Blend Chai Lg
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          value="Traditional Blend Chai Rg"
-                        />
-                        Traditional Blend Chai Rg
-                      </li>
-                    </ul>
-                  </div>
-
+                        <input type="checkbox"      <li>
+        <input type="checkbox" value="Panetone"/>
+        Panetone
+      </li>
+      <li>
+        <input type="checkbox" value="Passion Orange"/>
+        Passion Orange
+      </li>
+      <li>
+        <input type="checkbox" value="Pecan Pie"/>
+        Pecan Pie
+      </li>
+      <li>
+        <input type="checkbox" value="Pumpkin Muffin"/>
+        Pumpkin Muffin
+      </li>
+      <li>
+        <input type="checkbox" value="Raspberry Scone"/>
+        Raspberry Scone
+      </li>
+      <li>
+        <input type="checkbox" value="Regular Coffee"/>
+        Regular Coffee
+      </li>
+      <li>
+        <input type="checkbox" value="Regular Coffee Rg"/>
+        Regular Coffee Rg
+      </li>
+      <li>
+        <input type="checkbox" value="Shortbread Cookie"/>
+        Shortbread Cookie
+      </li>
+      <li>
+        <input type="checkbox" value="Single Shot Espresso"/>
+        Single Shot Espresso
+      </li>
+      <li>
+        <input type="checkbox" value="Small Time Roast"/>
+        Small Time Roast
+      </li>
+      <li>
+        <input type="checkbox" value="Small Time Roast Lg"/>
+        Small Time Roast Lg
+      </li>
+      <li>
+        <input type="checkbox" value="Small Time Roast Rg"/>
+        Small Time Roast Rg
+      </li>
+      <li>
+        <input type="checkbox" value="Small Time Roast Sm"/>
+        Small Time Roast Sm
+      </li>
+      <li>
+        <input type="checkbox" value="Snickerdoodle"/>
+        Snickerdoodle
+      </li>
+      <li>
+        <input type="checkbox" value="South American Dark"/>
+        South American Dark
+      </li>
+      <li>
+        <input type="checkbox" value="South American Dark Lg"/>
+        South American Dark Lg
+      </li>
+      <li>
+        <input type="checkbox" value="South American Dark Rg"/>
+        South American Dark Rg
+      </li>
+      <li>
+        <input type="checkbox" value="South American Dark Sm"/>
+        South American Dark Sm
+      </li>
+      <li>
+        <input type="checkbox" value="Tea Time Tumbler"/>
+        Tea Time Tumbler
+      </li>
+      <li>
+        <input type="checkbox" value="Thai- Organic"/>
+        Thai- Organic
+      </li>
+      <li>
+        <input type="checkbox" value="Thai Lg"/>
+        Thai Lg
+      </li>
+      <li>
+        <input type="checkbox" value="Thai Rg"/>
+        Thai Rg
+      </li>
+      <li>
+        <input type="checkbox" value="Thai Sm"/>
+        Thai Sm
+      </li>
+      <li>
+        <input type="checkbox" value="Toffee Nut Latte"/>
+        Toffee Nut Latte
+      </li>
+      <li>
+        <input type="checkbox" value="Vanilla Bean"/>
+        Vanilla Bean
+      </li>
+      <li>
+        <input type="checkbox" value="Vanilla Latte"/>
+        Vanilla Latte
+      </li>
+      <li>
+        <input type="checkbox" value="Vanilla Latte Rg"/>
+        Vanilla Latte Rg
+      </li>
+      <li>
+        <input type="checkbox" value="Viennese Dark"/>
+        Viennese Dark
+      </li>
+      <li>
+        <input type="checkbox" value="Viennese Dark Lg"/>
+        Viennese Dark Lg
+      </li>
+      <li>
+        <input type="checkbox" value="Viennese Dark Rg"/>
+        Viennese Dark Rg
+      </li>
+      <li>
+        <input type="checkbox" value="White chocolate"/>
+        White chocolate
+      </li>
+      <li>
+        <input type="checkbox" value="White chocolate Lg"/>
+        White chocolate Lg
+      </li>
+      <li>
+        <input type="checkbox" value="White chocolate Rg"/>
+        White chocolate Rg
+      </li>
+    </ul>
+  </div>
                   <div id="totalTransactionDiv" class="total-transaction"></div>
                 </aside>
               </td>
@@ -509,7 +502,9 @@
                   TOTAL MONTHLY TRANSACTION IN EACH STORE​
                 </h1>
                 <div class="monthly-transaction">
-                  <canvas id="barchart2" width="400" height="200"></canvas>
+                  <div class="chart-bar2">
+                    <canvas id="barchart2"></canvas>
+                  </div>
                 </div>
               </td>
               <td colspan="2">
@@ -519,7 +514,7 @@
                 <div class="daily-transaction">
                   <div class="container-chart">
                     <div class="chart-line1">
-                      <canvas id="chart-daily" width="" height></canvas>
+                      <canvas id="chart-daily"</canvas>
                     </div>
                   </div>
                 </div>
@@ -532,7 +527,7 @@
                 </h1>
                 <div class="time-transaction">
                   <div class="chart-line2">
-                    <canvas id="chart-time" width="710" height="200"></canvas>
+                    <canvas id="chart-time"></canvas>
                   </div>
                 </div>
               </td>

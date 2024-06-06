@@ -79,7 +79,7 @@ function init() {
     .addEventListener("click", () => changePage(1));
 }
 
-function loadData(url, callback) {
+function loadData(callback) {
   fetch(coffeeShopData)
     .then((response) => {
       if (!response.ok) {
