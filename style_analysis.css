@@ -25,13 +25,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 9rem;
-  scroll-behavior: smooth;
-}
-
 html::-webkit-scrollbar {
   width: 0.8rem;
 }
@@ -86,20 +79,6 @@ body {
   z-index: 2;
   transition: color 0.5s;
 }
-
-/* .navbar .navbar-nav a::after {
-  content: "";
-  background: #fbc48d;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  opacity: 0;
-} */
 
 .navbar .navbar-nav a:hover {
   color: #856565;
@@ -162,7 +141,6 @@ body {
   background-color: #ffe2b0;
   height: 740px;
   width: 1243px;
-  margin: 0 auto; /* Menengahkan kotak */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 50px;
   position: relative;
@@ -175,10 +153,6 @@ body {
   background-color: #a06500;
   height: 94%;
   width: 96%; /* Lebar maksimum elemen */
-  position: absolute; /* Menjadikan posisi absolut */
-  top: 50%; /* Menggeser ke atas sebesar setengah tinggi elemen */
-  left: 50%; /* Menggeser ke kiri sebesar setengah lebar elemen */
-  transform: translate(-50%, -50%); /* Menggeser ke tengah */
   border-radius: 50px;
   display: flex;
   align-items: center; /* Menyusun elemen ke tengah secara vertikal */
@@ -199,13 +173,22 @@ body {
   display: flex;
 }
 
-.dropdown {
+.dropdown1 {
   min-width: 14em;
   position: relative;
 }
 
-.dropdown * {
-  box-sizing: border-box; /* Mengubah kurung kurawal menjadi titik dua */
+.dropdown2 {
+  min-width: 14em;
+  position: relative;
+}
+
+.dropdown1 * {
+  box-sizing: border-box;
+}
+
+.dropdown2 * {
+  box-sizing: border-box;
 }
 
 .select {
@@ -255,8 +238,8 @@ body {
   width: 100%;
   transform: translateX(-50%);
   opacity: 0;
-  display: none;
-  transition: 0.2s;
+  visibility: hidden; /* Mengganti display: none; */
+  transition: opacity 0.2s, visibility 0s linear 0.2s; /* Mengganti transition: 0.2s; */
   z-index: 1;
 }
 
@@ -271,39 +254,20 @@ body {
   background: #a06600;
 }
 
-.active {
-  background: #23242a;
+.menu-open {
+  opacity: 1;
+  visibility: visible; /* Mengganti display: block; */
+  transition: opacity 0.2s, visibility 0s; /* Mengganti transition: 0.2s; */
 }
 
-.menu-open {
-  display: block;
-  opacity: 1;
+.hidden {
+  display: none;
 }
 
 .total-transaction {
   background-color: white;
   height: 75px;
   width: 220px;
-  border-radius: 10px;
-}
-
-.monthly-transaction {
-  background-color: white;
-  height: 200px;
-  width: 710px;
-  border-radius: 10px;
-}
-.daily-transaction {
-  background-color: white;
-  height: 200px;
-  width: 424px;
-  border-radius: 10px;
-}
-
-.time-transaction {
-  background-color: white;
-  height: 200px;
-  width: 1144px;
   border-radius: 10px;
 }
 
@@ -341,4 +305,35 @@ body {
   height: 300px;
   position: relative;
   display: flex;
+}
+
+.chart {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
+  height: 100%;
+  width: 100%;
+  max-width: 200px;
+}
+
+.chart-line1 {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #ffc107;
+}
+
+.chart-line2 {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #ffc107;
+}
+
+canvas {
+  width: 100% !important;
+  max-height: 200px;
+  background: white;
+  border: 4px solid #ffc107;
 }
