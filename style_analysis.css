@@ -70,14 +70,49 @@ body {
   margin-right: 15%;
 }
 
-.navbar .navbar-nav a {
-  color: var(--primary); /* Menggunakan variabel --primary */
-  font-size: 14px;
-  padding: 10px 20px;
-  cursor: pointer;
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar .dropdown {
   position: relative;
-  z-index: 2;
-  transition: color 0.5s;
+  display: inline-block;
+}
+
+.navbar .dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.6em;
+}
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .navbar .navbar-nav a:hover {
@@ -102,17 +137,14 @@ body {
 .active-navbar {
   background-color: #ffbb70;
   color: #292929;
-  border-radius: 40px;
   font-weight: bold;
 }
 
-.active-navbar:hover {
+.navbar .dropdown-menu .active-navbar{
   color: #292929 !important;
+  background-color: #ffbb70 !important;
 }
 
-#hamburger-menu {
-  display: none;
-}
 
 .kotak_analysis-1 {
   background-color: #ffe2b0;
@@ -317,6 +349,7 @@ canvas {
 
 @media (min-width: 1920px) {
   /* Navbar */
+/* Navbar */
 .navbar {
   background: transparent;
   display: flex;
@@ -337,14 +370,45 @@ canvas {
   margin-right: 15%;
 }
 
-.navbar .navbar-nav a {
-  color: var(--primary); /* Menggunakan variabel --primary */
-  font-size: 14px;
-  padding: 10px 20px;
-  cursor: pointer;
+
+.navbar a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar .dropdown {
   position: relative;
-  z-index: 2;
-  transition: color 0.5s;
+  display: inline-block;
+}
+
+.navbar .dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.6em;
+}
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .navbar .navbar-nav a:hover {
@@ -369,12 +433,12 @@ canvas {
 .active-navbar {
   background-color: #ffbb70;
   color: #292929;
-  border-radius: 40px;
   font-weight: bold;
 }
 
-.active-navbar:hover {
+.navbar .dropdown-menu .active-navbar{
   color: #292929 !important;
+  background-color: #ffbb70 !important;
 }
 
 #hamburger-menu {
@@ -583,7 +647,7 @@ canvas {
 }
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .kotak_analysis-1 {
       height: 370px;
       width: 575px;
@@ -699,4 +763,4 @@ canvas {
   .chart {
       max-width: 50px;
   }
-}
+} */
