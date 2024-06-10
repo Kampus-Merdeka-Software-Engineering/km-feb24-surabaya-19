@@ -25,13 +25,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 9rem;
-  scroll-behavior: smooth;
-}
-
 html::-webkit-scrollbar {
   width: 0.8rem;
 }
@@ -244,7 +237,6 @@ body {
 .container-table {
   width: 100%;
   overflow: hidden;
-  padding-left: 20%;
 }
 
 h1 {
@@ -282,18 +274,19 @@ h1 {
 }
 
 .styled-table {
-  width: 10vw;
+  width: 100%;
   border-collapse: collapse;
   margin: 5px 0;
   font-size: 0.6em;
   font-family: "Arial", sans-serif;
-  min-width: 10vw;
+  min-width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead tr {
   background-color: #a06500;
   color: #ffffff;
+ 
   text-align: left;
 }
 
@@ -319,7 +312,6 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-left: -20%;
 }
 
 .pagination button {
@@ -350,10 +342,9 @@ h1 {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-
 
 .modal-content {
   background-color: #fefefe;
@@ -378,7 +369,6 @@ h1 {
   background-color: red;
   color: white;
 }
-
 
 .close {
   color: #aaaaaa;
@@ -406,4 +396,60 @@ h1 {
   text-align: center;
   justify-content: center;
   margin-top: 25px;
+}
+
+/* Responsive Tables */
+@media (max-width: 1281px) {
+  .styled-table {
+    font-size: 0.5em;
+  }
+}
+
+@media (max-width: 1280px) {
+  .styled-table {
+    font-size: 0.5em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .styled-table {
+    font-size: 0.45em;
+  }
+}
+
+@media (max-width: 767px) {
+  .styled-table {
+    font-size: 0.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .styled-table {
+    font-size: 0.35em;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 8px 10px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+.table-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

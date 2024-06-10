@@ -92,7 +92,7 @@ body {
 }
 
 .dropdown-toggle::after {
-  content: ' ▼';
+  content: " ▼";
   font-size: 0.6em;
 }
 
@@ -236,9 +236,6 @@ body {
   color: #856565;
 }
 
-
-
-
 .flex-container1 {
   overflow: hidden;
   padding-top: 2.55%;
@@ -305,7 +302,6 @@ body {
 .dropdown1 {
   margin-top: 10%;
 }
-
 
 .dropdown1 * {
   box-sizing: border-box;
@@ -477,7 +473,7 @@ canvas {
 }
 
 /* Responsive Layout */
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .container {
     margin-top: 5%;
   }
@@ -489,7 +485,7 @@ canvas {
     width: 100%;
     height: 100%;
   }
-  
+
   .flex-container2 {
     display: flex;
     flex-direction: column;
@@ -506,7 +502,7 @@ canvas {
     padding-bottom: 0.5%;
     padding-top: 0.5%;
   }
-  
+
   .kotak_analysis-1 {
     background-color: #ffe2b0;
     height: 245vh;
@@ -521,7 +517,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .kotak_analysis-2 {
     background-color: #a06500;
     height: 95%;
@@ -532,14 +528,14 @@ canvas {
     justify-content: center;
     overflow: hidden;
   }
-  
+
   .product_category-box,
   .product_category-circle {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .dropdown1,
   .dropdown2 {
     width: 12em;
@@ -549,20 +545,19 @@ canvas {
     padding-left: 5%;
     align-items: center;
   }
-  
+
   .dropdown1 {
     margin-top: 2.5%;
   }
-  
-  
+
   .dropdown1 * {
     box-sizing: border-box;
   }
-  
+
   .dropdown2 * {
     box-sizing: border-box;
   }
-  
+
   .select {
     background: white;
     color: black;
@@ -575,16 +570,16 @@ canvas {
     cursor: pointer;
     transition: background 0.3s;
   }
-  
+
   .select-clicked {
     border: 2px #a06600 solid;
     box-shadow: 0 0 0.8em #a06600;
   }
-  
+
   .select:hover {
     background: grey;
   }
-  
+
   .pickme {
     width: 0;
     height: 0;
@@ -593,11 +588,11 @@ canvas {
     border-top: 6px solid black;
     transition: 0.3s;
   }
-  
+
   .pickme-rotate {
     transform: rotate(180deg);
   }
-  
+
   .menu {
     list-style: none;
     padding: 0.2em 0.5em;
@@ -616,28 +611,28 @@ canvas {
     transition: opacity 0.2s, visibility 0s linear 0.2s;
     z-index: 1;
   }
-  
+
   .menu li {
     padding: 0.7em 0.5em;
     margin: 0.3em 0;
     border-radius: 0.5em;
     cursor: pointer;
   }
-  
+
   .menu li:hover {
     background: #a06600;
   }
-  
+
   .menu-open {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s, visibility 0s;
   }
-  
+
   .hidden {
     display: none;
   }
-  
+
   /* Footer */
   .footer {
     background-color: #a06500;
@@ -647,26 +642,26 @@ canvas {
     width: 100%;
     height: 80px;
   }
-  
+
   .footer-text {
     text-align: center;
     justify-content: center;
     margin-top: 25px;
   }
-  
+
   .section {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .transaction-product_category {
     flex: 0.8;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-  
+
   .monthly-transaction,
   .daily-transaction,
   .time-transaction {
@@ -674,7 +669,7 @@ canvas {
     align-items: center;
     justify-content: center;
   }
-  
+
   .total-transaction {
     background: white;
     width: 12em;
@@ -684,41 +679,39 @@ canvas {
     text-align: center;
     font-size: 1.4rem;
     margin-left: 28%;
-    
   }
-  
+
   .product_category-box {
     height: 200px;
     width: 450px;
     padding-left: 5.25%;
     padding-right: 5.25%;
   }
-  
+
   .product_category-circle {
     max-height: 200px;
     width: 200px;
   }
-  
+
   .monthly-transaction {
     width: 450px;
     height: 200px;
     padding-left: 6.5%;
   }
-  
+
   .daily-transaction {
     width: 450px;
     height: 200px;
     padding-left: 6.5%;
     padding-right: 17%;
   }
-  
+
   .time-transaction {
     width: 450px;
     max-height: 450px;
     padding-left: 3.6%;
     padding-right: 6.5%;
   }
-
 
   .product_category-box {
     width: 90%;
@@ -729,13 +722,12 @@ canvas {
   .monthly-transaction,
   .daily-transaction,
   .time-transaction {
-
     padding-left: 5%;
     padding-right: 5%;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .flex-container1 {
     overflow: hidden;
     padding-top: 2.55%;
@@ -744,7 +736,7 @@ canvas {
     width: 100%;
     height: 100%;
   }
-  
+
   .flex-container2 {
     display: flex;
     flex-direction: column;
@@ -761,7 +753,7 @@ canvas {
     padding-bottom: 0.5%;
     padding-top: 0.5%;
   }
-  
+
   .kotak_analysis-1 {
     background-color: #ffe2b0;
     height: 245vh;
@@ -776,7 +768,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .kotak_analysis-2 {
     background-color: #a06500;
     height: 95%;
@@ -787,14 +779,14 @@ canvas {
     justify-content: center;
     overflow: hidden;
   }
-  
+
   .product_category-box,
   .product_category-circle {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .dropdown1,
   .dropdown2 {
     width: 12em;
@@ -804,20 +796,19 @@ canvas {
     padding-left: 5%;
     align-items: center;
   }
-  
+
   .dropdown1 {
     margin-top: 2.5%;
   }
-  
-  
+
   .dropdown1 * {
     box-sizing: border-box;
   }
-  
+
   .dropdown2 * {
     box-sizing: border-box;
   }
-  
+
   .select {
     background: white;
     color: black;
@@ -830,16 +821,16 @@ canvas {
     cursor: pointer;
     transition: background 0.3s;
   }
-  
+
   .select-clicked {
     border: 2px #a06600 solid;
     box-shadow: 0 0 0.8em #a06600;
   }
-  
+
   .select:hover {
     background: grey;
   }
-  
+
   .pickme {
     width: 0;
     height: 0;
@@ -848,11 +839,11 @@ canvas {
     border-top: 6px solid black;
     transition: 0.3s;
   }
-  
+
   .pickme-rotate {
     transform: rotate(180deg);
   }
-  
+
   .menu {
     list-style: none;
     padding: 0.2em 0.5em;
@@ -871,28 +862,28 @@ canvas {
     transition: opacity 0.2s, visibility 0s linear 0.2s;
     z-index: 1;
   }
-  
+
   .menu li {
     padding: 0.7em 0.5em;
     margin: 0.3em 0;
     border-radius: 0.5em;
     cursor: pointer;
   }
-  
+
   .menu li:hover {
     background: #a06600;
   }
-  
+
   .menu-open {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s, visibility 0s;
   }
-  
+
   .hidden {
     display: none;
   }
-  
+
   /* Footer */
   .footer {
     background-color: #a06500;
@@ -902,26 +893,26 @@ canvas {
     width: 100%;
     height: 80px;
   }
-  
+
   .footer-text {
     text-align: center;
     justify-content: center;
     margin-top: 25px;
   }
-  
+
   .section {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .transaction-product_category {
     flex: 0.8;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-  
+
   .monthly-transaction,
   .daily-transaction,
   .time-transaction {
@@ -929,7 +920,7 @@ canvas {
     align-items: center;
     justify-content: center;
   }
-  
+
   .total-transaction {
     background: white;
     width: 12em;
@@ -939,41 +930,39 @@ canvas {
     text-align: center;
     font-size: 1.4rem;
     margin-left: 28%;
-    
   }
-  
+
   .product_category-box {
     height: 200px;
     width: 450px;
     padding-left: 5.25%;
     padding-right: 5.25%;
   }
-  
+
   .product_category-circle {
     max-height: 200px;
     width: 200px;
   }
-  
+
   .monthly-transaction {
     width: 450px;
     height: 200px;
     padding-left: 6.5%;
   }
-  
+
   .daily-transaction {
     width: 450px;
     height: 200px;
     padding-left: 6.5%;
     padding-right: 17%;
   }
-  
+
   .time-transaction {
     width: 450px;
     max-height: 450px;
     padding-left: 3.6%;
     padding-right: 6.5%;
   }
-
 
   .product_category-box {
     width: 90%;
@@ -984,802 +973,7 @@ canvas {
   .monthly-transaction,
   .daily-transaction,
   .time-transaction {
-
     padding-left: 5%;
     padding-right: 5%;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .container {
-    margin-top: 8%;
-  }
-
-  .flex-container1 {
-    overflow: hidden;
-    padding-top: 2.55%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .flex-container2 {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* Analysis Sections */
-  .chart-title {
-    font-size: 10px;
-    align-items: center;
-    padding-bottom: 0.5%;
-    padding-top: 0.5%;
-  }
-  
-  .kotak_analysis-1 {
-    background-color: #ffe2b0;
-    height: 125vh;
-    width: 90%;
-    max-width: 1200px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .kotak_analysis-2 {
-    background-color: #a06500;
-    height: 95%;
-    width: 95%;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .product_category-box,
-  .product_category-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .dropdown1,
-  .dropdown2 {
-    min-width: 12em;
-    position: relative;
-    margin-bottom: -10%;
-    padding-left: 5%;
-  }
-  
-  .dropdown1 {
-    margin-top: 10%;
-  }
-  
-  
-  .dropdown1 * {
-    box-sizing: border-box;
-  }
-  
-  .dropdown2 * {
-    box-sizing: border-box;
-  }
-  
-  .select {
-    background: white;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px #a06600 solid;
-    border-radius: 0.5em;
-    padding: 1em;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .select-clicked {
-    border: 2px #a06600 solid;
-    box-shadow: 0 0 0.8em #a06600;
-  }
-  
-  .select:hover {
-    background: grey;
-  }
-  
-  .pickme {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid black;
-    transition: 0.3s;
-  }
-  
-  .pickme-rotate {
-    transform: rotate(180deg);
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0.2em 0.5em;
-    background: white;
-    border: 1px #a06600 solid;
-    color: black;
-    position: absolute;
-    top: 3em;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    max-height: 40vh;
-    overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0s linear 0.2s;
-    z-index: 1;
-  }
-  
-  .menu li {
-    padding: 0.7em 0.5em;
-    margin: 0.3em 0;
-    border-radius: 0.5em;
-    cursor: pointer;
-  }
-  
-  .menu li:hover {
-    background: #a06600;
-  }
-  
-  .menu-open {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s, visibility 0s;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #a06500;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-  }
-  
-  .footer-text {
-    text-align: center;
-    justify-content: center;
-    margin-top: 25px;
-  }
-  
-  .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .transaction-product_category {
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .monthly-transaction,
-  .daily-transaction,
-  .time-transaction {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .total-transaction {
-    background: white;
-    width: 12em;
-    border-radius: 0.5em;
-    padding: 1em;
-    margin-left: 5%;
-    text-align: center;
-    font-size: 1.4rem;
-  }
-  
-  .product_category-box {
-    height: 200px;
-    width: 400px;
-    padding-left: 5.25%;
-    padding-right: 5.25%;
-  }
-  
-  .product_category-circle {
-    max-height: 200px;
-    width: 200px;
-  }
-  
-  .monthly-transaction {
-    width: 500px;
-    height: 200px;
-    padding-left: 6.5%;
-  }
-  
-  .daily-transaction {
-    width: 400px;
-    height: 200px;
-    padding-left: 6.5%;
-    padding-right: 17%;
-  }
-  
-  .time-transaction {
-    width: 900px;
-    max-height: 200px;
-    padding-left: 3.6%;
-    padding-right: 6.5%;
-  }
-
-  .navbar-logo img {
-    width: 75px;
-    margin-right: 13%;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  .container {
-    margin-top: 10%;
-  }
-
-  .navbar-logo img {
-    width: 80px;
-    margin-right: 15%;
-  }
-
-  .flex-container1 {
-    overflow: hidden;
-    padding-top: 2.55%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .flex-container2 {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* Analysis Sections */
-  .chart-title {
-    font-size: 10px;
-    align-items: center;
-    padding-bottom: 0.5%;
-    padding-top: 0.5%;
-  }
-  
-  .kotak_analysis-1 {
-    background-color: #ffe2b0;
-    height: 125vh;
-    width: 90%;
-    max-width: 1200px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .kotak_analysis-2 {
-    background-color: #a06500;
-    height: 95%;
-    width: 95%;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .product_category-box,
-  .product_category-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .dropdown1,
-  .dropdown2 {
-    min-width: 12em;
-    position: relative;
-    margin-bottom: -10%;
-    padding-left: 5%;
-  }
-  
-  .dropdown1 {
-    margin-top: 10%;
-  }
-  
-  
-  .dropdown1 * {
-    box-sizing: border-box;
-  }
-  
-  .dropdown2 * {
-    box-sizing: border-box;
-  }
-  
-  .select {
-    background: white;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px #a06600 solid;
-    border-radius: 0.5em;
-    padding: 1em;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .select-clicked {
-    border: 2px #a06600 solid;
-    box-shadow: 0 0 0.8em #a06600;
-  }
-  
-  .select:hover {
-    background: grey;
-  }
-  
-  .pickme {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid black;
-    transition: 0.3s;
-  }
-  
-  .pickme-rotate {
-    transform: rotate(180deg);
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0.2em 0.5em;
-    background: white;
-    border: 1px #a06600 solid;
-    color: black;
-    position: absolute;
-    top: 3em;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    max-height: 40vh;
-    overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0s linear 0.2s;
-    z-index: 1;
-  }
-  
-  .menu li {
-    padding: 0.7em 0.5em;
-    margin: 0.3em 0;
-    border-radius: 0.5em;
-    cursor: pointer;
-  }
-  
-  .menu li:hover {
-    background: #a06600;
-  }
-  
-  .menu-open {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s, visibility 0s;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #a06500;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-  }
-  
-  .footer-text {
-    text-align: center;
-    justify-content: center;
-    margin-top: 25px;
-  }
-  
-  .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .transaction-product_category {
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .monthly-transaction,
-  .daily-transaction,
-  .time-transaction {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .total-transaction {
-    background: white;
-    width: 12em;
-    border-radius: 0.5em;
-    padding: 1em;
-    margin-left: 5%;
-    text-align: center;
-    font-size: 1.4rem;
-  }
-  
-  .product_category-box {
-    height: 200px;
-    width: 450px;
-    padding-left: 5.25%;
-    padding-right: 5.25%;
-  }
-  
-  .product_category-circle {
-    max-height: 200px;
-    width: 200px;
-  }
-  
-  .monthly-transaction {
-    width: 550px;
-    height: 200px;
-    padding-left: 6.5%;
-  }
-  
-  .daily-transaction {
-    width: 450px;
-    height: 200px;
-    padding-left: 6.5%;
-    padding-right: 17%;
-  }
-  
-  .time-transaction {
-    width: 950px;
-    max-height: 200px;
-    padding-left: 3.6%;
-    padding-right: 6.5%;
-  }
-}
-
-@media only screen and (max-width: 2100px) {
-  .container {
-    display: grid;
-    margin-top: 10%;
-    padding: 0 2%;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    width: 100%;
-  }
-  
-  .navbar-logo img {
-    width: 80px;
-    margin-right: 15%;
-  }
-  
-  .navbar-nav a {
-    padding: 10px;
-    color: var(--primary);
-  }
-  
-  .navbar .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-toggle::after {
-    content: ' ▼';
-    font-size: 0.6em;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-menu a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .navbar-nav a:hover,
-  .navbar-extra a:hover {
-    color: #856565;
-  }
-  
-  .active-navbar {
-    background-color: #ffbb70;
-    color: #292929;
-    font-weight: bold;
-  }
-  
-  .navbar .dropdown-menu .active-navbar {
-    background-color: #ffbb70;
-    color: #292929 !important;
-  }
-  
-  .flex-container1 {
-    overflow: hidden;
-    padding-top: 2.55%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .flex-container2 {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* Analysis Sections */
-  .chart-title {
-    font-size: 10px;
-    align-items: center;
-    padding-bottom: 0.5%;
-    padding-top: 0.5%;
-  }
-  
-  .kotak_analysis-1 {
-    background-color: #ffe2b0;
-    height: 125vh;
-    width: 90%;
-    max-width: 1200px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .kotak_analysis-2 {
-    background-color: #a06500;
-    height: 95%;
-    width: 95%;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .product_category-box,
-  .product_category-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .dropdown1,
-  .dropdown2 {
-    min-width: 12em;
-    position: relative;
-    margin-bottom: -10%;
-    padding-left: 5%;
-  }
-  
-  .dropdown1 {
-    margin-top: 10%;
-  }
-  
-  
-  .dropdown1 * {
-    box-sizing: border-box;
-  }
-  
-  .dropdown2 * {
-    box-sizing: border-box;
-  }
-  
-  .select {
-    background: white;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px #a06600 solid;
-    border-radius: 0.5em;
-    padding: 1em;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .select-clicked {
-    border: 2px #a06600 solid;
-    box-shadow: 0 0 0.8em #a06600;
-  }
-  
-  .select:hover {
-    background: grey;
-  }
-  
-  .pickme {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid black;
-    transition: 0.3s;
-  }
-  
-  .pickme-rotate {
-    transform: rotate(180deg);
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0.2em 0.5em;
-    background: white;
-    border: 1px #a06600 solid;
-    color: black;
-    position: absolute;
-    top: 3em;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    max-height: 40vh;
-    overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0s linear 0.2s;
-    z-index: 1;
-  }
-  
-  .menu li {
-    padding: 0.7em 0.5em;
-    margin: 0.3em 0;
-    border-radius: 0.5em;
-    cursor: pointer;
-  }
-  
-  .menu li:hover {
-    background: #a06600;
-  }
-  
-  .menu-open {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s, visibility 0s;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #a06500;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-  }
-  
-  .footer-text {
-    text-align: center;
-    justify-content: center;
-    margin-top: 25px;
-  }
-  
-  .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .transaction-product_category {
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .monthly-transaction,
-  .daily-transaction,
-  .time-transaction {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .total-transaction {
-    background: white;
-    width: 12em;
-    border-radius: 0.5em;
-    padding: 1em;
-    margin-left: 5%;
-    text-align: center;
-    font-size: 1.4rem;
-  }
-  
-  .product_category-box {
-    height: 200px;
-    width: 550px;
-    padding-left: 5.25%;
-    padding-right: 5.25%;
-  }
-  
-  .product_category-circle {
-    max-height: 200px;
-    width: 200px;
-  }
-  
-  .monthly-transaction {
-    width: 600px;
-    height: 200px;
-    padding-left: 6.5%;
-  }
-  
-  .daily-transaction {
-    width: 400px;
-    height: 200px;
-    padding-left: 6.5%;
-    padding-right: 17%;
-  }
-  
-  .time-transaction {
-    width: 1000px;
-    max-height: 200px;
-    padding-left: 3.6%;
-    padding-right: 6.5%;
   }
 }
