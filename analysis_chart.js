@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchInitialData() {
-    // const response = await fetch("/coffeeShopSalesData.json");
+    const response = await fetch("/coffeeShopSalesData.json");
     const data = await response.json();
     return data.map(item => ({
       product_category: item.product_category,
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchData(selectedOptions1, selectedOptions2) {
-      // const response = await fetch("/coffeeShopSalesData.json");
+      const response = await fetch("/coffeeShopSalesData.json");
       const data = await response.json();
 
       const reducedData = data.map(item => ({
