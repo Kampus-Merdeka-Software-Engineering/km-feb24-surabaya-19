@@ -1,37 +1,10 @@
-let navbar = document.querySelector(".navbar");
-
-document.querySelector("#menu-btn").onclick = () => {
-  navbar.classList.toggle("active");
-  searchForm.classList.remove("active");
-  cartItem.classList.remove("active");
-};
-
-let searchForm = document.querySelector(".search-form");
-
-document.querySelector("#search-btn").onclick = () => {
-  searchForm.classList.toggle("active");
-  navbar.classList.remove("active");
-  cartItem.classList.remove("active");
-};
-
-let cartItem = document.querySelector(".cart-items-container");
-
-document.querySelector("#cart-btn").onclick = () => {
-  cartItem.classList.toggle("active");
-  navbar.classList.remove("active");
-  searchForm.classList.remove("active");
-};
-
-window.onscroll = () => {
-  navbar.classList.remove("active");
-  searchForm.classList.remove("active");
-  cartItem.classList.remove("active");
-};
+// start team
 
 //create by Farhan
 
 var changeScroll_top = 0;
 var changeScroll_bottom = 0;
+var navbar = document.querySelector(".navbar"); // Mengubah pemilihan elemen menjadi class navbar
 var navLinks = document.querySelectorAll(".navbar-nav a"); // Menambahkan variabel untuk menyimpan semua tautan navbar
 var footer = document.querySelector(".footer");
 var footerText = document.querySelectorAll(".footer-text");
@@ -70,7 +43,6 @@ window.addEventListener("scroll", function(){
   changeScroll_bottom = scrollBottom;
 });
 
-// start team
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".wrapper svg");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;

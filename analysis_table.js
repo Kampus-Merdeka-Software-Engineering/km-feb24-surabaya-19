@@ -1,56 +1,65 @@
 var changeScroll_top = 0;
 var changeScroll_bottom = 0;
-var navbar = document.querySelector(".navbar");
-var navLinks = document.querySelectorAll(".navbar-nav a");
+var navbar = document.querySelector(".navbar"); // Mengubah pemilihan elemen menjadi class navbar
+var navLinks = document.querySelectorAll(".navbar-nav a"); // Menambahkan variabel untuk menyimpan semua tautan navbar
 var footer = document.querySelector(".footer");
 var footerText = document.querySelectorAll(".footer-text");
 
-window.addEventListener("scroll", function () {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var scrollBottom = window.pageYOffset + window.innerHeight;
+window.addEventListener("scroll", function(){
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var scrollBottom = window.pageYOffset || document.documentElement.scrollBottom;
+  if(scrollTop > changeScroll_top){
+    navbar.style.top = "-80px"; // Mengubah style top menjadi -80px untuk menyembunyikan navbar
+    navLinks.forEach(function(link) {
+      link.style.opacity = "0"; // Menyembunyikan tautan navbar dengan mengubah opacity menjadi 0
+      link.style.transition = "0.5s";
+    });
 
-    if (scrollTop > changeScroll_top && scrollTop > 80) {
-        navbar.style.top = "-80px";
-        navLinks.forEach(function (link) {
-            link.style.opacity = "0";
-        });
-    } else {
-        navbar.style.top = "0";
-        navLinks.forEach(function (link) {
-            link.style.opacity = "1";
-        });
+    if (scrollBottom > changeScroll_bottom){
+      footer.style.bottom = "0"; // Mengubah style top menjadi -80px untuk menyembunyikan navbar
+    footerText.forEach(function(link) {
+      link.style.opacity = "1"; // Menyembunyikan tautan navbar dengan mengubah opacity menjadi 0
+      link.style.transition = "0.5s";
+    });
     }
+  } else {
+    navbar.style.top = "0"; // Mengembalikan style top menjadi 0 untuk menampilkan navbar kembali
+    footer.style.bottom = "-80px"
+    navLinks.forEach(function(link) {
+      link.style.opacity = "1"; // Menampilkan kembali tautan navbar dengan mengubah opacity menjadi 1
+      link.style.transition = "0.5s";
+    });
 
-    if (scrollBottom >= document.documentElement.scrollHeight - 2) {
-        footer.style.bottom = "0";
-        footerText.forEach(function (link) {
-            link.style.opacity = "1";
-        });
-    } else {
-        footer.style.bottom = "-80px";
-        footerText.forEach(function (link) {
-            link.style.opacity = "0";
-        });
-    }
-
-    changeScroll_top = scrollTop;
-    changeScroll_bottom = scrollBottom;
+    footerText.forEach(function(link) {
+      link.style.opacity = "0"; // Menyembunyikan tautan navbar dengan mengubah opacity menjadi 0
+      link.style.transition = "0.5s";
+    });
+  }
+  changeScroll_top = scrollTop;
+  changeScroll_bottom = scrollBottom;
 });
 
-// Toggle class active
-const navbarNav = document.querySelector(".navbar-nav");
-// Ketika hamburger menu di klik
-document.querySelector("#hamburger-menu").onclick = () => {
-    navbarNav.classList.toggle("active");
+
+
+//Toggle class active
+
+document.querySelector("#menu-btn").onclick = () => {
+  navbar.classList.toggle("active");
+  searchForm.classList.remove("active");
 };
 
-// Klik diluar sidebar untuk menghilangkan bar
-const hamburgerMenu = document.querySelector("#hamburger-menu");
-document.addEventListener("click", function (e) {
-    if (!hamburgerMenu.contains(e.target) && !navbarNav.contains(e.target)) {
-        navbarNav.classList.remove("active");
-    }
-});
+let searchForm = document.querySelector(".search-form");
+
+document.querySelector("#search-btn").onclick = () => {
+  searchForm.classList.toggle("active");
+  navbar.classList.remove("active");
+};
+
+
+window.onscroll = () => {
+  navbar.classList.remove("active");
+  searchForm.classList.remove("active");
+};
 
 document.addEventListener('DOMContentLoaded', init);
 

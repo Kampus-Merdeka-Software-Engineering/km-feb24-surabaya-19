@@ -27,25 +27,34 @@
       </a>
 
       <nav class="navbar">
-        <a href="Gome">Home</a>
-        <a href="./halaman/menu.html">Menu</a>
-        <a href="../halaman/store.html">Member</a>
-        <a href="#team">Team</a>
-        <a href="./halaman/analysis_.html">Analysis</a>
-        <a href="#login">Login</a>
+        <a href="#" class="navbar-logo"
+          ><img src="../img/logo.png" alt="Logo"
+        /></a>
+        <div class="navbar-nav">
+          <a  class="active-navbar" href="../index.html">Home</a>
+          <a href="./halaman/team.html">Team</a>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Analysis</a>
+            <div class="dropdown-menu">
+              <a href="../halaman/analysis_table.html">Table</a>
+              <a class="active-navbar" href="../halaman/analysis_chart.html">Chart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="icons">
+          <div class="fas fa-search" id="search-btn"></div>
+          <div class="fas fa-heart" id="fav-btn"></div>
+          <div class="fas fa-shopping-cart" id="cart-btn"></div>
+          <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+  
+        <div class="search-form">
+          <input type="search" id="search-box" placeholder="search here..." />
+          <label for="search-box" class="fas fa-search"></label>
+        </div>
+
       </nav>
-
-      <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-heart" id="fav-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fas fa-bars" id="menu-btn"></div>
-      </div>
-
-      <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here..." />
-        <label for="search-box" class="fas fa-search"></label>
-      </div>
 
       <div class="cart-items-container">
         <div class="cart-item">
@@ -91,166 +100,26 @@
         <img src="img/home1.png" width="1000" height="400" />
       </div>
 
-      <div class="items">
-        <div class="teksA">
-          <h4>Selamat datang di pusat data</h4>
-          <h4>prnjualan kami! Disini, Anda bisa</h4>
-          <h4>mengeksplorasi berbagai visualisasi</h4>
-          <h4>data yang menyoroti performa penjualan</h4>
-          <h4>coffee shop kami di tiga lokasi strategis :</h4>
-          <h4>Lower Manhattan, Astoria, dan Hell's Kitchen</h4>
-          <br />
-          <button>Shop Now</button>
-        </div>
-        <div class="home-img">
-          <img src="img/home2.png" width="180px" alt="" />
-        </div>
-        <div class="home-img">
-          <img src="img/home3.png" width="180px" alt="" />
-        </div>
-        <div class="home-img">
-          <img src="img/home4.png" width="180px" alt="" />
-        </div>
+      <div class="intro">
+        <p>Selamat Datang Di Pusat Data Penjualan Kami!</p>
+        <p>
+          Disini Anda Bisa Mengeksplorasi Berbagai Visualisasi Data Yang
+          Menyoroti Performa Penjualan Coffee Shop Kami Di Tiga Lokasi Strategis
+          : <br />Lower Manhattan, Astoria, dan Hell's Kitchen
+        </p>
+        <a href="halaman/menu.html" class="shop-now">Shop Now</a>
+      </div>
+      <div class="gallery">
+        <img src="img/home2.png" alt="Coffee 1" />
+        <img src="img/home3.png" alt="Brownies" />
+        <img src="img/home4.png" alt="Iced Coffee" />
       </div>
     </section>
-    <!--home section end-->
-    <!-- start team -->
-    <div class="container-wrapper">
-      <div id="team">
-        <h1>TEAM</h1>
-      </div>
-      <div class="wrapper">
-        <!-- icon -->
-        <svg
-          id="left"
-          fill="#86654B"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#86654B"
-          transform="rotate(0)matrix(-1, 0, 0, 1, 0, 0)"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <title>ionicons-v5-b</title>
-            <polygon points="144 448 368 256 144 64 144 448"></polygon>
-          </g>
-        </svg>
-        <!--end icon  -->
 
-        <ul class="carousel">
-          <li class="card">
-            <div class="img">
-              <img src="../img/blank-profile.png" alt="img" draggable="false" />
-            </div>
-            <h2>Muhamad Hafizh Harsani</h2>
-            <span>Leader</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="../img/blank-profile.png" alt="img" draggable="false" />
-            </div>
-            <h2>Febrina Nabila Zahrah</h2>
-            <span>Deployment Team</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="../img/blank-profile.png" alt="img" draggable="false" />
-            </div>
-            <h2>Dylan Tirta Adhitama</h2>
-            <span>Front-End Engineer</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/farhan.png" alt="img" draggable="false" />
-            </div>
-            <h2>Farhan Hidayatul Haq</h2>
-            <span>Front End Engineer</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/ismi.png" alt="img" draggable="false" />
-            </div>
-            <h2>Ismiasih</h2>
-            <span>Front End Engineer</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/saskiya.png" alt="img" draggable="false" />
-            </div>
-            <h2>Saskiya Fira Sakhila</h2>
-            <span>Front End Engineer</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/dinda.png" alt="img" draggable="false" />
-            </div>
-            <h2>Dinda Adelia Bangre</h2>
-            <span>Pitch Deck Team</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/leni.png" alt="img" draggable="false" />
-            </div>
-            <h2>Leni Fadilatur Rohmah</h2>
-            <span>Pitch Deck Team</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/uswatun.png" alt="img" draggable="false" />
-            </div>
-            <h2>Uswatun Khasanah</h2>
-            <span>Pitch Deck Team</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/rizwaldi.png" alt="img" draggable="false" />
-            </div>
-            <h2>Rizwaldi Muhamad Iman</h2>
-            <span>Quality Assurance</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/niko.png" alt="img" draggable="false" />
-            </div>
-            <h2>Muhammad Niko Dwi Putranto</h2>
-            <span>Quality Assurance</span>
-          </li>
-          <li class="card">
-            <div class="img">
-              <img src="img/tessa.png" alt="img" draggable="false" />
-            </div>
-            <h2>Tessa Nurwani</h2>
-            <span>Quality Assurance</span>
-          </li>
-        </ul>
-        <!-- start icon -->
-        <svg
-          id="right"
-          fill="#86654B"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#86654B"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <title>ionicons-v5-b</title>
-            <polygon points="144 448 368 256 144 64 144 448"></polygon>
-          </g>
-        </svg>
-        <!-- end icon -->
-      </div>
-    </div>
-    <!-- end team -->
+    <footer class="footer">
+      <p class="footer-text">&copy; Coffee Shop</p>
+    </footer>
+    <!--home section end-->
 
     <!--My Javascript-->
     <script src="script_home.js"></script>

@@ -44,20 +44,25 @@ window.addEventListener("scroll", function(){
 
 
 //Toggle class active
-const navbarNav = document.querySelector(".navbar-nav");
-//Ketika hamburger menu di klik
-document.querySelector("#hamburger-menu").onclick = () => {
-  navbarNav.classList.toggle("active");
+
+document.querySelector("#menu-btn").onclick = () => {
+  navbar.classList.toggle("active");
+  searchForm.classList.remove("active");
+};
+
+let searchForm = document.querySelector(".search-form");
+
+document.querySelector("#search-btn").onclick = () => {
+  searchForm.classList.toggle("active");
+  navbar.classList.remove("active");
 };
 
 
-//Klik diluar sidebar untuk menghilangkan bar
-const hamburgerMenu = document.querySelector("#hamburger-menu"); // Mengubah variabel menjadi hamburgerMenu
-document.addEventListener("click", function (e) {
-  if (!hamburgerMenu.contains(e.target) && !navbarNav.contains(e.target)) { // Mengubah hamburger menjadi hamburgerMenu
-    navbarNav.classList.remove("active");
-  }
-});
+window.onscroll = () => {
+  navbar.classList.remove("active");
+  searchForm.classList.remove("active");
+};
+
 
 
 const photo_coffe = document.querySelectorAll(".photo_coffe");
@@ -73,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeChartContext = document.getElementById("chart-time").getContext("2d");
 
   const chartJs = createDoughnutChart(chartCtx);
-  const barchart1 = createBarChart(barchart1Ctx, "Total Transactions by Product Category");
-  const barchart2 = createBarChart(barchart2Ctx, "Total Monthly Transactions in Each Store");
-  const chartJsDaily = createLineChart(dailyChartContext, "Total Transactions per Day for Each Store Location");
-  const chartJsTime = createLineChart(timeChartContext, "Total Transactions per Hour for Each Store Location");
+  const barchart1 = createBarChart(barchart1Ctx);
+  const barchart2 = createBarChart(barchart2Ctx);
+  const chartJsDaily = createLineChart(dailyChartContext);
+  const chartJsTime = createLineChart(timeChartContext);
 
   // Function to initialize totalTransactionQty from initialData
   function initializeTotalTransactionQty(data) {
@@ -172,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchInitialData() {
-    const response = await fetch("/coffeeShopSalesData.json");
+    // const response = await fetch("/coffeeShopSalesData.json");
     const data = await response.json();
     return data.map(item => ({
       product_category: item.product_category,
@@ -190,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchData(selectedOptions1, selectedOptions2) {
-      const response = await fetch("/coffeeShopSalesData.json");
+      // const response = await fetch("/coffeeShopSalesData.json");
       const data = await response.json();
 
       const reducedData = data.map(item => ({
@@ -276,6 +281,9 @@ document.addEventListener("DOMContentLoaded", function () {
             display: false,
           },
         },
+        adjustableSize: true,
+        responsive: true,
+        maintainAspectRatio: false,
       },
     });
   }
@@ -299,6 +307,9 @@ document.addEventListener("DOMContentLoaded", function () {
             beginAtZero: true,
           },
         },
+        adjustableSize: true,
+        responsive: true,
+        maintainAspectRatio: false,
       },
     });
   }
@@ -322,6 +333,9 @@ document.addEventListener("DOMContentLoaded", function () {
             beginAtZero: true,
           },
         },
+        adjustableSize: true,
+        responsive: true,
+        maintainAspectRatio: false,
       },
     });
   }
