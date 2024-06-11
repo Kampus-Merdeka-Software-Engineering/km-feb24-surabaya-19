@@ -1,4 +1,5 @@
 Coffee Shop Sales Dashboard
+
 This is a website that features various data visualizations highlighting the sales performance of our coffee shops in three locations: Lower Manhattan, Astoria, and Hell's Kitchen.
 
 Project Website Link Deploy:
